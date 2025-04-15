@@ -12,7 +12,7 @@
 ## Provided material
 
 * A non-functional PHP backend to reimplement in Go.
-* A React application that displays an autocomplete for medical specialties and allows listing related generic medications.
+* A React application that displays an autocomplete for medical specialities and allows listing related generic medications.
 * A Dockerfile and a Docker Compose.
 * A basic CI using GitHub Actions.
 
@@ -29,14 +29,16 @@ The provided repository needs to be used as a *code template* to create a reposi
 
 ### Reimplement in Go
 
-Reimplement the existing PHP code in the `backend` folder using Go.  
+**Your first task is to reimplement the existing PHP code in the `backend` folder using Go.**
+
 The PHP code intentionally contains some issues that you will need to address in your implementation.  
 The expected Go code should provide an HTTP API exposing the same endpoints as those currently implemented in PHP.
 To present the required data, your Go code must use the SQLite database located in the `data` folder.
 
 ### Adding a new feature
 
-Your first task will be to develop a new feature.  
+**Your second task will be to develop a new feature.**
+
 The goal is to add a search component to the patient profile page.  
 This component will allow users to search for a medical specialty using free text and display a list of related generic medications.  
 
@@ -55,17 +57,19 @@ You are free to develop the feature as you want. The UX and the design are taken
 
 ### Updating the Docker compose
 
-The Docker Compose file allows you to easily launch both the frontend and backend simultaneously so that they can communicate with each other. Update the `docker-compose.yml` file to ensure it can start both your frontend and backend services at the same time.
+**Your third task is to define a Dockerfile for your Go backend.**
 
-You will need to define a Dockerfile for your Go backend.
+The Docker Compose file allows you to easily launch both the frontend and backend simultaneously so that they can communicate with each other. Update the `docker-compose.yml` file to ensure it can start both your frontend and backend services at the same time.
 
 ### Updating the CI
 
-Your third task is to change the current GitHub Actions CI to build and publish the Docker images provided in the repository to a GitHub release on every push to the `main` branch.
+**Your fourth task is to improve the CI.**
+
+Change the current GitHub Actions CI to build and publish the Docker images provided in the repository to a GitHub release on every push to the `main` branch.
 
 ### Going further
 
-Your last task is to be critical :smile:.
+**Your last task is to be critical :smile:.**
 
 The provided code is not representative of the expectations we have for production code (on purpose).
 We instead encourage you to build the feature in a way that you think is the best.
