@@ -1,21 +1,25 @@
 # Code assessment
 
-> [!IMPORTANT]  
-> **Be sure to create yourself a working copy using this repo as a template**.
-> [Here is how to do it](https://github.com/synapse-medicine/fs-interview/wiki/How-to-start/). 
+> **!IMPORTANT**  
+> **Be sure to create yourself a working copy using this repo as a template**.  
+> You will need to create a **private repository** from this one.   
+> Here is the step by step :
+1. Use this repo as a template for **your** working copy. Follow [this link](https://github.com/new?template_name=foundation-interview&template_owner=synapse-medicine)
+2. Setup your repository. 
+3. Start coding ! 
+> When you will be finished, **we will ask you to share us your repository**. 
 
 ## Provided material
 
-* A Java 21 Spring backend with a populated SQLite in memory database and endpoints to:
-    * get a Patient by id
-    * get the list of allergies for a given Patient
-    * update a Patient's allergies
-* A Node 20 React application with the following pages:
-    * a home page that lists all patients
-    * a page that displays the patient's information
-    * an error page
-* A Dockerfile and a Docker compose
-* A basic CI using GitHub Actions
+* A non-functional PHP backend to reimplement in Go.
+* A React application that displays an autocomplete for medical specialties and allows listing related generic medications.
+* A Dockerfile and a Docker Compose.
+* A basic CI using GitHub Actions.
+
+## Resources 
+
+* [TailwindCSS](https://tailwindcss.com/docs)
+* [Neobrutalism](https://www.neobrutalism.dev/styling)
 
 ## Instructions
 
@@ -23,22 +27,31 @@
 
 The provided repository needs to be used as a *code template* to create a repository in your personal space. 
 
+### Reimplement in Go
+
+Reimplement the existing PHP code in the `backend` folder using Go.  
+The PHP code intentionally contains some issues that you will need to address in your implementation.  
+The expected Go code should provide an HTTP API exposing the same endpoints as those currently implemented in PHP.
+To present the required data, your Go code must use the SQLite database located in the `data` folder.
 
 ### Adding a new feature
 
-Your first task will be to develop a new feature.
-The goal is to add a search molecule component to the patient profile page.
-This component will show a list of molecules that match the input text.
-When the user selects a molecule from this list, it should be added to the patient allergies using the existing endpoint.
+Your first task will be to develop a new feature.  
+The goal is to add a search component to the patient profile page.  
+This component will allow users to search for a medical specialty using free text and display a list of related generic medications.  
 
-This gives the following user workflow:
-1. The user clicks on the search field and search for a molecule name using free text.
-2. The user selects the molecule from a list of results that match the search text.
-3. The user chooses the molecule by clicking on it.
-4. The chosen molecule is added to the patient’s allergy list.
+This gives the following user workflow:  
+1. The user clicks on the search field and searches for a medical specialty using free text.  
+2. The application displays a list of generic medications related to the entered specialty.  
+3. The user selects a generic medication from the list.  
+4. The application displays the following information for the selected generic medication:
+    - Label of the specialty  
+    - Specialty code  
+    - Creation date of the generic group  
+    - Official journal publication date of the last update of the generic group  
+    - Reference specialty of the generic group  
 
-You are free to develop the feature as you want. The UX and the design are taken into account, but you should not spend too much
-time on it.
+You are free to develop the feature as you want. The UX and the design are taken into account, but you should not spend too much time on it.
 
 ### Updating the CI
 
