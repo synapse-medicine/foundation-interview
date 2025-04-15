@@ -53,9 +53,15 @@ This gives the following user workflow:
 
 You are free to develop the feature as you want. The UX and the design are taken into account, but you should not spend too much time on it.
 
+### Updating the Docker compose
+
+The Docker Compose file allows you to easily launch both the frontend and backend simultaneously so that they can communicate with each other. Update the `docker-compose.yml` file to ensure it can start both your frontend and backend services at the same time.
+
+You will need to define a Dockerfile for your Go backend.
+
 ### Updating the CI
 
-Your second task is to change the current GitHub Actions CI to build the Docker images provided in the repository.
+Your third task is to change the current GitHub Actions CI to build and publish the Docker images provided in the repository to a GitHub release on every push to the `main` branch.
 
 ### Going further
 
