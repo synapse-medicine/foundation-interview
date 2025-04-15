@@ -2,7 +2,7 @@
 
 /**
  * @brief Ces fonctions font appel � l�univers m�tier du m�dicament de la base Th�riaque�. Elles permettent soit de retrouver une ou des sp�cialit�s r�pondant � des crit�res de recherche, soit d�obtenir des informations compl�mentaires sur une sp�cialit� donn�e
- * 
+ *
  * @author Seif
  */
 class Specialite
@@ -16,7 +16,7 @@ class Specialite
     * <li><b>prix</b> : Prix du médicament</li>
     * <li><b>laboratoire</b> : Laboratoire fabricant</li>
     * </ul>
-     * 
+     *
      * @param string $lib_prod Terme de la recherche
      * @return Array
      * @author Seif
@@ -29,21 +29,21 @@ class Specialite
         if (! $dbAdapter) {
             return new SoapFault('-2', 'Erreur de connexion &agrave; la base de donn�es');
         }
-		
-        $sOrderSpNom = " order by sp_nom asc";		
+
+        $sOrderSpNom = " order by ms.nom_commercial asc";
         $lib_prod = $dbAdapter->quote('%' . $lib_prod . '%', 'text');
         $sql = "
-        SELECT 
+        SELECT
             ms.id AS id_specialite,
             ms.nom_commercial,
             ms.prix,
-            ms.laboratoire,
-        FROM 
+            ms.laboratoire
+        FROM
             medicaments_specialites ms
-        WHERE 
+        WHERE
             UPPER(ms.nom_commercial) LIKE UPPER(" . $lib_prod . ")
         " . $sOrderSpNom . ";";
-		  
+
          return Shared::returnRows($dbAdapter, $sql);
     }
 ?>
