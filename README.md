@@ -7,7 +7,7 @@
 1. Use this repo as a template for **your** working copy. Follow [this link](https://github.com/new?template_name=foundation-interview&template_owner=synapse-medicine)
 2. Setup your repository. 
 3. Start coding ! 
-> When you will be finished, **we will ask you to share us your repository**. 
+> When you will be finished, **we will ask you to share us your repository** (You can take a look at the contributors section of this repo). 
 
 ## Provided material
 
@@ -43,7 +43,7 @@ The goal is to add a search component to the patient profile page.
 This component will allow users to search for a medical specialty using free text and display a list of related generic medications.  
 
 This gives the following user workflow:  
-1. The user clicks on the search field and searches for a medical specialty using free text.  
+1. The user clicks on the search field and searches for a medical branded specialty using free text.  
 2. The application displays a list of generic medications related to the entered specialty.  
 3. The user selects a generic medication from the list.  
 4. The application displays the following information for the selected generic medication:
@@ -73,7 +73,6 @@ Change the current GitHub Actions CI to build and publish the Docker images prov
 
 The provided code is not representative of the expectations we have for production code (on purpose).
 We instead encourage you to build the feature in a way that you think is the best.
-We **don't** expect you to fix the current code though, just to add the new feature.
 
 List what you would improve in the codebase (current or in your new feature) in the `Improvements section`.
 
